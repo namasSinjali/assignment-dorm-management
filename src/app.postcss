@@ -3,7 +3,24 @@
 @tailwind utilities;
 @tailwind variants;
 
-html,
-body {
-	@apply h-full overflow-hidden;
+@layer base{
+
+	html,
+	body {
+		@apply h-full overflow-hidden;
+	}
+	h2 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply text-xl;
+	}
+}
+
+@layer components{
+	.bcselect {
+		@apply select;
+		@apply anchor;
+		@apply bg-none bg-transparent dark:bg-transparent border-none [box-shadow:none] dark:[box-shadow:none] p-0;
+	}
 }
