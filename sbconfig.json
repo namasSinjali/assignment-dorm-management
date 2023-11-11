@@ -1,0 +1,756 @@
+{
+    "dns": {
+        "rules": [
+            {
+                "outbound": [
+                    "any"
+                ],
+                "server": "local"
+            },
+            {
+                "disable_cache": true,
+                "geosite": [
+                    "category-ads-all"
+                ],
+                "server": "block"
+            },
+            {
+                "clash_mode": "global",
+                "server": "remote"
+            },
+            {
+                "clash_mode": "direct",
+                "server": "local"
+            },
+            {
+                "geosite": "cn",
+                "server": "local"
+            }
+        ],
+        "servers": [
+            {
+                "address": "https://1.1.1.1/dns-query",
+                "detour": "select",
+                "strategy": "ipv4_only",
+                "tag": "remote"
+            },
+            {
+                "address": "https://223.5.5.5/dns-query",
+                "detour": "direct",
+                "tag": "local"
+            },
+            {
+                "address": "rcode://success",
+                "tag": "block"
+            }
+        ]
+    },
+    "experimental": {
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "secret": "",
+            "store_selected": true
+        }
+    },
+    "inbounds": [
+        {
+            "auto_route": true,
+            "endpoint_independent_nat": true,
+            "inet4_address": "172.19.0.1/30",
+            "inet6_address": "2001:0470:f9da:fdfa::1/64",
+            "mtu": 9000,
+            "sniff": true,
+            "strict_route": true,
+            "type": "tun"
+        },
+        {
+            "domain_strategy": "ipv4_only",
+            "listen": "127.0.0.1",
+            "listen_port": 2333,
+            "sniff": true,
+            "tag": "socks-in",
+            "type": "socks",
+            "users": []
+        },
+        {
+            "domain_strategy": "ipv4_only",
+            "listen": "127.0.0.1",
+            "listen_port": 2334,
+            "sniff": true,
+            "tag": "mixed-in",
+            "type": "mixed",
+            "users": []
+        }
+    ],
+    "log": {},
+    "outbounds": [
+        {
+            "tag": "select",
+            "type": "selector",
+            "default": "urltest",
+            "outbounds": [
+                "urltest",
+                "HK丨香港1",
+                "HK丨香港2",
+                "HK丨香港3",
+                "HK丨香港4",
+                "HK丨香港5",
+                "TW丨台湾1",
+                "TW丨台湾2",
+                "TW丨台湾3",
+                "JP丨日本1",
+                "JP丨日本2",
+                "JP丨日本3",
+                "JP丨日本4",
+                "KR丨韩国1",
+                "KR丨韩国2",
+                "KR丨韩国3",
+                "SG丨新加坡1",
+                "SG丨新加坡2",
+                "SG丨新加坡3",
+                "MY丨马来西亚1",
+                "PH丨菲律宾1",
+                "PH丨菲律宾2",
+                "ID丨印度尼西亚1",
+                "IN丨印度1",
+                "TH丨泰国1",
+                "VN丨越南1",
+                "PK丨巴基斯坦1-3x",
+                "IL丨以色列1-2x",
+                "KZ丨哈萨克斯坦1",
+                "AE丨阿联酋1-3x",
+                "AU丨澳大利亚1",
+                "AU丨澳大利亚2",
+                "NZ丨新西兰1-3x",
+                "US丨加利福利亚1",
+                "US丨纽约1",
+                "US丨得克萨斯1",
+                "US丨佛罗里达1",
+                "US丨华盛顿1",
+                "US丨俄勒冈1",
+                "CA丨加拿大1",
+                "MX丨墨西哥1",
+                "AR丨阿根廷1",
+                "BR丨巴西1",
+                "UK丨英国1",
+                "UK丨英国2",
+                "UK丨英国3",
+                "FR丨法国1",
+                "DE丨德国1",
+                "IT丨意大利1",
+                "NL丨荷兰1",
+                "SE丨瑞典1",
+                "RU丨俄罗斯1",
+                "UA丨乌克兰1",
+                "TR丨土耳其1",
+                "PL丨波兰1",
+                "DK丨丹麦1",
+                "LT丨立陶宛1",
+                "LV丨拉脱维亚1",
+                "CH丨瑞士1",
+                "RO丨罗马尼亚1",
+                "EG丨埃及1",
+                "ZA丨南非1"
+            ]
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10101,
+            "tag": "HK丨香港1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10102,
+            "tag": "HK丨香港2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10103,
+            "tag": "HK丨香港3",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10104,
+            "tag": "HK丨香港4",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10105,
+            "tag": "HK丨香港5",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10201,
+            "tag": "TW丨台湾1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10202,
+            "tag": "TW丨台湾2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10203,
+            "tag": "TW丨台湾3",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10301,
+            "tag": "JP丨日本1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10302,
+            "tag": "JP丨日本2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10303,
+            "tag": "JP丨日本3",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10304,
+            "tag": "JP丨日本4",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10401,
+            "tag": "KR丨韩国1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10402,
+            "tag": "KR丨韩国2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10403,
+            "tag": "KR丨韩国3",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10501,
+            "tag": "SG丨新加坡1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10502,
+            "tag": "SG丨新加坡2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10503,
+            "tag": "SG丨新加坡3",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10601,
+            "tag": "MY丨马来西亚1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10701,
+            "tag": "PH丨菲律宾1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10702,
+            "tag": "PH丨菲律宾2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10801,
+            "tag": "ID丨印度尼西亚1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 10901,
+            "tag": "IN丨印度1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11001,
+            "tag": "TH丨泰国1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11101,
+            "tag": "VN丨越南1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11201,
+            "tag": "PK丨巴基斯坦1-3x",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11301,
+            "tag": "IL丨以色列1-2x",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11401,
+            "tag": "KZ丨哈萨克斯坦1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11501,
+            "tag": "AE丨阿联酋1-3x",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11601,
+            "tag": "AU丨澳大利亚1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11602,
+            "tag": "AU丨澳大利亚2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 11701,
+            "tag": "NZ丨新西兰1-3x",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20101,
+            "tag": "US丨加利福利亚1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20201,
+            "tag": "US丨纽约1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20301,
+            "tag": "US丨得克萨斯1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20401,
+            "tag": "US丨佛罗里达1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20501,
+            "tag": "US丨华盛顿1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20601,
+            "tag": "US丨俄勒冈1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20701,
+            "tag": "CA丨加拿大1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 20801,
+            "tag": "MX丨墨西哥1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 30101,
+            "tag": "AR丨阿根廷1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 30201,
+            "tag": "BR丨巴西1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40101,
+            "tag": "UK丨英国1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40102,
+            "tag": "UK丨英国2",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40103,
+            "tag": "UK丨英国3",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40201,
+            "tag": "FR丨法国1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40301,
+            "tag": "DE丨德国1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40401,
+            "tag": "IT丨意大利1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40501,
+            "tag": "NL丨荷兰1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40601,
+            "tag": "SE丨瑞典1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40701,
+            "tag": "RU丨俄罗斯1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40801,
+            "tag": "UA丨乌克兰1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 40901,
+            "tag": "TR丨土耳其1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 41001,
+            "tag": "PL丨波兰1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 41101,
+            "tag": "DK丨丹麦1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 41201,
+            "tag": "LT丨立陶宛1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 41301,
+            "tag": "LV丨拉脱维亚1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 41401,
+            "tag": "CH丨瑞士1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 41501,
+            "tag": "RO丨罗马尼亚1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 50101,
+            "tag": "EG丨埃及1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "server": "tj0gcyvx.acciff.com",
+            "server_port": 50201,
+            "tag": "ZA丨南非1",
+            "type": "vmess",
+            "security": "auto",
+            "uuid": "FC69B087-9E4A-12D8-7797-DC78D76907E9"
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        },
+        {
+            "tag": "block",
+            "type": "block"
+        },
+        {
+            "tag": "dns-out",
+            "type": "dns"
+        },
+        {
+            "tag": "urltest",
+            "type": "urltest",
+            "outbounds": [
+                "HK丨香港1",
+                "HK丨香港2",
+                "HK丨香港3",
+                "HK丨香港4",
+                "HK丨香港5",
+                "TW丨台湾1",
+                "TW丨台湾2",
+                "TW丨台湾3",
+                "JP丨日本1",
+                "JP丨日本2",
+                "JP丨日本3",
+                "JP丨日本4",
+                "KR丨韩国1",
+                "KR丨韩国2",
+                "KR丨韩国3",
+                "SG丨新加坡1",
+                "SG丨新加坡2",
+                "SG丨新加坡3",
+                "MY丨马来西亚1",
+                "PH丨菲律宾1",
+                "PH丨菲律宾2",
+                "ID丨印度尼西亚1",
+                "IN丨印度1",
+                "TH丨泰国1",
+                "VN丨越南1",
+                "PK丨巴基斯坦1-3x",
+                "IL丨以色列1-2x",
+                "KZ丨哈萨克斯坦1",
+                "AE丨阿联酋1-3x",
+                "AU丨澳大利亚1",
+                "AU丨澳大利亚2",
+                "NZ丨新西兰1-3x",
+                "US丨加利福利亚1",
+                "US丨纽约1",
+                "US丨得克萨斯1",
+                "US丨佛罗里达1",
+                "US丨华盛顿1",
+                "US丨俄勒冈1",
+                "CA丨加拿大1",
+                "MX丨墨西哥1",
+                "AR丨阿根廷1",
+                "BR丨巴西1",
+                "UK丨英国1",
+                "UK丨英国2",
+                "UK丨英国3",
+                "FR丨法国1",
+                "DE丨德国1",
+                "IT丨意大利1",
+                "NL丨荷兰1",
+                "SE丨瑞典1",
+                "RU丨俄罗斯1",
+                "UA丨乌克兰1",
+                "TR丨土耳其1",
+                "PL丨波兰1",
+                "DK丨丹麦1",
+                "LT丨立陶宛1",
+                "LV丨拉脱维亚1",
+                "CH丨瑞士1",
+                "RO丨罗马尼亚1",
+                "EG丨埃及1",
+                "ZA丨南非1"
+            ]
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "rules": [
+            {
+                "geosite": "category-ads-all",
+                "outbound": "block"
+            },
+            {
+                "outbound": "dns-out",
+                "protocol": "dns"
+            },
+            {
+                "clash_mode": "direct",
+                "outbound": "direct"
+            },
+            {
+                "clash_mode": "global",
+                "outbound": "select"
+            },
+            {
+                "geoip": [
+                    "cn",
+                    "private"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "geosite": "cn",
+                "outbound": "direct"
+            }
+        ]
+    }
+}
