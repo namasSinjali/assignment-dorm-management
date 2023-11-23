@@ -1,8 +1,12 @@
-<script>
-	import { BookmarkOutline, BookmarkSolid, UserSolid, UserOutline } from 'flowbite-svelte-icons';
+<script context="module">
+	import editBookmark from '$lib/bookmark.js';
 	import { myBookmarksData } from '$lib/store.js';
-	import { onMount, onDestroy } from 'svelte';
+	import { BookmarkOutline, BookmarkSolid, UserSolid, UserOutline } from 'flowbite-svelte-icons';
 	import { browser } from '$app/environment';
+</script>
+
+<script>
+	import { onMount, onDestroy } from 'svelte';
 
 	export let data;
 
@@ -40,7 +44,10 @@
 			</div>
 		</div>
 		<div class="flex grow-[2] items-center gap-4 justify-end">
-			<button class="chip hover:variant-filled p-1">
+			<button
+				class="chip hover:variant-filled p-1"
+				on:click={() => editBookmark(data.id, !bookmarked)}
+			>
 				<span>
 					{#if bookmarked}
 						<BookmarkSolid size="xs" />

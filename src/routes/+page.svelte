@@ -76,7 +76,7 @@
 	<!-- Content Area -->
 	<div class="content-grid flex-auto overflow-hidden">
 		<label
-			class="tile md:hidden [&.active>:nth-child(2)]:bg-primary-active-token"
+			class="tile cursor-pointer md:hidden [&.active>:nth-child(2)]:bg-primary-active-token"
 			class:active={maximizedSection === 'profile'}
 			bind:this={profileLabel}
 		>
@@ -96,7 +96,7 @@
 		</label>
 
 		<label
-			class="tile md:hidden [&.active>:nth-child(2)]:bg-primary-active-token"
+			class="tile cursor-pointer md:hidden [&.active>:nth-child(2)]:bg-primary-active-token"
 			class:active={maximizedSection === 'search'}
 			bind:this={searchLabel}
 		>
@@ -116,7 +116,7 @@
 		</label>
 
 		<label
-			class="tile md:hidden [&.active>:nth-child(2)]:bg-primary-active-token"
+			class="tile cursor-pointer md:hidden [&.active>:nth-child(2)]:bg-primary-active-token"
 			class:active={maximizedSection === 'bookmarks'}
 			bind:this={bookmarksLabel}
 		>

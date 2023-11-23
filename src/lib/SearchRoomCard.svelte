@@ -130,7 +130,7 @@
 		<ol class="breadcrumb [&_li]:block">
 			<li class="crumb">
 				<select
-					class="bcselect"
+					class="bcselect cursor-pointer"
 					name="phase"
 					bind:value={phaseSelection}
 					on:change={() => {
@@ -147,7 +147,7 @@
 			<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 			<li class="crumb">
 				<select
-					class="bcselect"
+					class="bcselect cursor-pointer"
 					name="building"
 					bind:value={buildingSelection}
 					on:change={scrollToSelection}
@@ -162,7 +162,7 @@
 			<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 			<li class="crumb">
 				<select
-					class="bcselect"
+					class="bcselect cursor-pointer"
 					name="floor"
 					bind:value={floorSelection}
 					on:change={scrollToSelection}
